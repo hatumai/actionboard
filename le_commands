@@ -1,0 +1,51 @@
+rails new actionboard -T -d postgresql
+- add rspec to gemfile
+bundle install
+rails generate rspec:install
+git init
+git add .
+git commit -m 'a blank canvas'
+(add git remote repo here)
+git push origin remote
+
+because this is rails 6 I am trying out webpacker (because it's the default), so that's new to me
+rails webpacker:install
+
+
+- add devise to gemfile
+bundle install
+
+rails g devise:install
+- devise config in environment files/layout
+
+rails g devise user
+
+/uncomment db settings from database.yml
+
+rake db:create
+rake db:migrate
+
+rails generate controller board index
+
+add some links for authentication and such to the layout
+
+add authentication to application_controller.rb
+
+rails generate devise:views -> to customize...
+
+rails g migration AddNewFieldsToUser name:string bio:text
+
+db:migrate
+
+rails g scaffold Post title:string body:text user:references
+
+rails g model Comment body:text commentable:references{polymorphic}:index
+
+
+
+
+
+
+
+
+
