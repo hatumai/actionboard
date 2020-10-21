@@ -26,7 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'devise'
-
+gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 
 # Reduces boot times through caching; required in config/boot.rb

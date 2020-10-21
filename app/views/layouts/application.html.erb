@@ -4,12 +4,39 @@
     <title>Actionboard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <% if user_signed_in? %>
+              <%= link_to 'Create post', new_post_path, :class => 'text-muted'  %>
+          <% else %>
+              <%= link_to 'Register', new_user_registration_path, :class => 'text-muted'  %>
+          <% end %>
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="/">ACTIONBOARD</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <% if user_signed_in? %>
+              <%= link_to "#{current_user.name} Profile", edit_user_registration_path, :class => 'btn btn-sm btn-outline-primary'  %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn  btn-sm btn-outline-secondary'  %>
+          <% else %>
+              <%= link_to "Login", new_user_session_path, :class => 'btn btn-sm btn-outline-secondary'  %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+  </div>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -18,22 +45,12 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <p class="navbar-text float-right">
-    <h1><a href="/">ACTIONBOARD!!!!</a></h1>
-      <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-
-          <p>
-            <%= link_to 'Create post', new_post_path, :class => 'navbar-link' %> |
-          </p>
-      <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-    </p>
-
-    <%= yield %>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

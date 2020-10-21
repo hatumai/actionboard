@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - actionboard_development@localhost" uuid="8171a9bc-b330-4add-b49e-7fc747019a08">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails actionboard: development" uuid="f21b9e47-d89a-40c8-9588-84e8f59f683b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails actionboard: test" uuid="552d006e-5f74-483c-bc87-dd4d6607d082">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails actionboard: production" uuid="8c402a1a-295f-4c46-a67e-e01e8eda3c74">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

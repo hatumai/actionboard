@@ -25,8 +25,6 @@ rails g devise user
 rake db:create
 rake db:migrate
 
-rails generate controller board index
-
 add some links for authentication and such to the layout
 
 add authentication to application_controller.rb
@@ -39,7 +37,16 @@ db:migrate
 
 rails g scaffold Post title:string body:text user:references
 
-rails g model Comment body:text commentable:references{polymorphic}:index
+rails g scaffold Comment body:text user:references commentable:references{polymorphic}:index
+
+
+yarn add bootstrap jquery popper.js
+
+webpacker configuration
+
+rails webpacker:compile
+
+add pagination - gem 'kaminari' + rails g kaminari:config
 
 
 

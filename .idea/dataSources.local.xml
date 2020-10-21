@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - actionboard_development@localhost" uuid="8171a9bc-b330-4add-b49e-7fc747019a08">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>hatumai</user-name>
+    </data-source>
+    <data-source name="Rails actionboard: development" uuid="f21b9e47-d89a-40c8-9588-84e8f59f683b">
+      <first-sync>true</first-sync>
+      <user-name>hatumai</user-name>
+    </data-source>
+    <data-source name="Rails actionboard: test" uuid="552d006e-5f74-483c-bc87-dd4d6607d082">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails actionboard: production" uuid="8c402a1a-295f-4c46-a67e-e01e8eda3c74">
+      <first-sync>true</first-sync>
+      <user-name>actionboard</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfebdfe9dffedfe3dfe5dfe4dfe8dfe5dfebdff8dfeedff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
