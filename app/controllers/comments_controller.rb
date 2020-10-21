@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
         comment_html = render_to_string('comments/_comment', layout: false, locals: { comment: @comment })
         format.json { render json: { comment: comment_html }, status: :ok }
       else
-      #   error
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -4,7 +4,7 @@ RSpec.describe "/posts", type: :request do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:test_user){
-    User.create(email: 'test@test.com', password: 'password')
+    User.create(email: 'test@test.com', password: 'password', name: 'test')
   }
 
   let(:valid_attributes) {
@@ -12,7 +12,7 @@ RSpec.describe "/posts", type: :request do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {user_id: test_user.id, title: nil, body: nil}
   }
 
   before(:each){

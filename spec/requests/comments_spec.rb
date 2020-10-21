@@ -16,19 +16,19 @@ RSpec.describe "/comments", type: :request do
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
   let(:test_user){
-    User.create(email: 'test@test.com', password: 'password')
+    User.create(email: 'test@test.com', password: 'password', name: 'test')
   }
 
   let(:test_post){
-    Post.create(user_id: test_user.id)
+    Post.create(user_id: test_user.id, title: 'test', body: 'test')
   }
 
   let(:valid_attributes) {
-    {user_id: test_user.id, commentable_id: test_post.id, commentable_type: 'Post'}
+    {user_id: test_user.id, commentable_id: test_post.id, commentable_type: 'Post', body: 'test'}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {user_id: test_user.id, commentable_id: test_post.id, commentable_type: 'Post'}
   }
 
   before(:each){
@@ -47,13 +47,8 @@ RSpec.describe "/comments", type: :request do
     context "with invalid parameters" do
       it "does not create a new Comment" do
         expect {
-          post comments_url, params: { comment: invalid_attributes }
+          post comments_url, params: { comment: invalid_attributes }, xhr: true
         }.to change(Comment, :count).by(0)
-      end
-
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post comments_url, params: { comment: invalid_attributes }
-        expect(response).to be_successful
       end
     end
   end
