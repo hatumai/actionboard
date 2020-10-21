@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.text_area :body %>
+  <div class="form-group">
+    <%= form.text_area :body, class: 'form-control' %>
   </div>
 
 
@@ -21,6 +21,6 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
