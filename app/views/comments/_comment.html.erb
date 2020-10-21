@@ -1,11 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Comment</strong>
-  <%= comment.body %>
+  <strong><%= comment.user.name %> commented on <%= comment.created_at.to_formatted_s(:long) %></strong>
 </p>
-
 <p>
-  <strong>User</strong>
-  <%= comment.user.name %>
+  <%= comment.body %>
 </p>
